@@ -14,7 +14,7 @@ steps:
     #docker build -t deepspeed:latest -f Dockerfile .
     #docker tag deepspeed:latest deepspeed/deepspeed:latest
     docker login --username deepspeed --password $MY_TOKEN
-    echo "done"
+    echo "$? done"
     #docker push deepspeed/deepspeed:latest
   env:
     MY_TOKEN: $TOKEN
