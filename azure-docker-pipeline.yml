@@ -13,7 +13,7 @@ steps:
 - bash: |
     #docker build -t deepspeed:latest -f Dockerfile .
     #docker tag deepspeed:latest deepspeed/deepspeed:latest
-    echo env:$MY_TOKEN | docker login --username deepspeed --password-stdin
+    echo "env:$MY_TOKEN" | docker login --username deepspeed --password-stdin
     echo "$? done"
     #docker push deepspeed/deepspeed:latest
   env:
