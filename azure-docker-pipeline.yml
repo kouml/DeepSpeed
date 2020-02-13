@@ -12,6 +12,7 @@ pool:
 steps:
 - bash: |
     echo "TESTVAR=$TESTVAR"
+    echo "NONSECRET=$NONSECRET"
 
 #docker build -t deepspeed:latest -f Dockerfile .
 #    docker tag deepspeed:latest deepspeed/deepspeed:latest
