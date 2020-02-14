@@ -13,7 +13,7 @@ steps:
   - task: Bash@3
     inputs:
       targetType: 'inline'
-      script: echo $MYSECRET
+      script: docker login --username deepspeed --password $MYSECRET
     env:
       MySecret: $(TOKEN)
 
