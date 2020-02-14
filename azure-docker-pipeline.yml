@@ -10,11 +10,19 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- bash: |
-    #docker build -t deepspeed:latest -f Dockerfile .
-    #docker tag deepspeed:latest deepspeed/deepspeed:latest
-    echo "env:$MY_TOKEN" | docker login --username deepspeed --password-stdin
-    echo "$? done"
-    #docker push deepspeed/deepspeed:latest
-  env:
-    MY_TOKEN: $TOKEN
+  - task: Bash@3
+    inputs:
+      targetType: 'inline'
+      script: echo $MYSECRET
+    env:
+      MySecret: $(TOKEN)
+
+#steps:
+#- bash: |
+#    #docker build -t deepspeed:latest -f Dockerfile .
+#    #docker tag deepspeed:latest deepspeed/deepspeed:latest
+#    echo "env:$MY_TOKEN" | docker login --username deepspeed --password-stdin
+#    echo "$? done"
+#    #docker push deepspeed/deepspeed:latest
+#  env:
+#    MY_TOKEN: $TOKEN
